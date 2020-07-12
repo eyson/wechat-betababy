@@ -1,0 +1,59 @@
+<view class="page" wx:if="{{isShow}}">
+	<!-- 记录类别 -->
+	<view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell">
+			<view class="weui-cell__hd">
+				<image src="../../../images/{{postInfo.icon}}" style="margin-right: 16px;vertical-align: middle;width:26px; height: 26px;"></image>
+			</view>
+			<view class="weui-cell__bd">{{postInfo.eventTypeDesc}}</view>
+			<view class="weui-cell__ft">{{postInfo.quantity}} {{postInfo.unit}}</view>
+		</view>
+	</view>
+
+	<!-- 记录信息 -->
+	<view class="page__bd">
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">记录内容</view>
+				<view class="weui-cell__ft">{{postInfo.postTypeDesc}}</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">发生时间</view>
+				<view class="weui-cell__ft">{{postInfo.postDate}} {{postInfo.postTime}}</view>
+			</view>
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">记录人</view>
+				<view class="weui-cell__ft">{{postInfo.userInfo.nickName}}</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">记录时间</view>
+				<view class="weui-cell__ft">{{postInfo.createTime}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 备注 -->
+	<view class="weui-cells__group">
+		<view class="weui-cells__title">备注</view>
+		<view class="weui-cells">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					{{postInfo.memo || '无'}}
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- button [[-->
+	<!-- <view class="ui-btn-wrap">
+		<navigator url="/pages/posts/posts?postId={{postId}}">
+			<button class="weui-btn ui-btn-primary">修改记录</button>
+		</navigator>
+	</view> -->
+	<view class="ui-btn-wrap" wx:if="{{type === 1}}">
+		<button class="weui-btn ui-btn-warn" bindtap="removePost">删除记录</button>
+	</view>
+	<!-- button ]]-->
+</view>

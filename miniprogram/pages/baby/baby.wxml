@@ -1,0 +1,95 @@
+<view class="weui-form" wx:if="{{isShow}}">
+	<!-- form input [[-->
+	<form bindsubmit="bindSubmit" report-submit="{{true}}">
+	<view class="weui-form__control-area">
+		<view class="weui-cells__group weui-cells__group_form">
+
+			<view class="weui-cells__title">基本信息</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell weui-cell_active">
+					<view class="weui-cell__hd"><label class="weui-label">昵称</label></view>
+					<view class="weui-cell__bd">
+						<input name="name" class="weui-input" placeholder="宝宝昵称" placeholder-class="weui-input__placeholder" value="{{babyInfo.detail.name}}" />
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell weui-cell_active weui-cell_select">
+					<view class="weui-cell__hd"><label class="weui-label">性别</label></view>
+					<view class="weui-cell__bd">
+						<picker mode="selector" bindchange="sexPickerChange" range="{{sexPickerList}}" value="{{sexPickerIndex}}">
+							<view class="picker">{{sexPickerList[sexPickerIndex]}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell">
+					<view class="weui-cell__hd"><label class="weui-label">生日</label></view>
+					<view class="weui-cell__bd weui-flex">
+						<picker mode="date" bindchange="birthdayPickerChange">
+							<view class="picker">{{birthday}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell weui-cell_active">
+					<view class="weui-cell__hd"><label class="weui-label">身高</label></view>
+					<view class="weui-cell__bd">
+						<input name="height" type="digit" class="weui-input" placeholder="单位：cm" placeholder-class="weui-input__placeholder" value="{{babyInfo.detail.height}}" />
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell">
+					<view class="weui-cell__hd"><label class="weui-label">体重</label></view>
+					<view class="weui-cell__bd weui-cell_active">
+						<input name="weight" type="digit" class="weui-input" placeholder="单位：kg" placeholder-class="weui-input__placeholder" value="{{babyInfo.detail.weight}}" />
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- form input ]]-->
+
+	<!-- 上传图片 [[-->
+	<view class="weui-form__control-area">
+		<view class="weui-cells__group weui-cells__group_form">
+			<view class="weui-cells__title">上传头像（96 x 96）</view>
+			<view class="weui-cells">
+				<view class="weui-cell weui-cell_input">
+					<view class="weui-cell__hd">
+						<view class="weui-uploader__files" id="uploaderFiles" style="float: left;">
+							<block wx:for-items="{{files}}" wx:key="index">
+								<view class="weui-uploader__file" id="{{item}}">
+									<image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+								</view>
+							</block>
+						</view>
+						<view class="weui-uploader__input-box">
+							<view class="weui-uploader__input" bindtap="chooseImage"></view>
+						</view>
+					</view>
+				</view>
+
+			</view>
+		</view>
+	</view>
+	<!-- 上传图片 ]]-->
+
+	<!-- button [[-->
+	<view class="ui-btn-wrap" wx:if="{{babyId}}">
+		<button class="weui-btn ui-btn-primary" form-type="submit">确认修改</button>
+	</view>
+	<view class="ui-btn-wrap" wx:else>
+		<button class="weui-btn ui-btn-primary" form-type="submit">确认添加</button>
+	</view>
+	<!-- button ]]-->
+	</form>
+</view>

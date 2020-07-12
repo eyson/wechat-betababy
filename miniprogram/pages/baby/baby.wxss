@@ -1,0 +1,63 @@
+/**
+ * Betababy v1.0
+ * 2020-03-30
+ * 
+ * Eyson You
+ * youyansen@gmail.com
+ * http://eyson.cn/
+ * 公众号：尤点意思
+ */
+ 
+
+/* 重置样式 */
+
+textarea {
+    height: 50px;
+}
+
+.page {
+    height: 100%
+}
+
+.weui-label {
+    width: 4.1em;
+    /* color: var(--weui-FG-1); */
+}
+
+.weui-form {
+    padding: 0;
+    background-color: transparent;
+}
+
+.weui-form__control-area {
+    margin: 16px 0 0 0;
+}
+.weui-cells__group_form .weui-cell:before,.weui-cells__group_form .weui-cells:before {
+    left: 0;
+    right: 0;
+}
+
+.weui-cells__group_form .weui-cell_select .weui-cell__bd:after{
+    right: 16px;
+}
+
+.weui-cells {
+    margin-top: -1px;
+}
+
+.weui-cells__group_form .weui-cells:after {
+    left: 0;
+    right: 0;
+}
+
+.weui-cells__group_form .weui-cell {
+    padding: 16px;
+}
+
+.weui-cells__group_form .weui-cell__hd {
+    padding-right: 0;
+}
+
+.weui-cells__group_form .weui-cells__title {
+    padding: 0 16px;
+}

@@ -1,0 +1,76 @@
+/**
+ * Betababy v1.0
+ * 2020-03-30
+ * 
+ * Eyson You
+ * youyansen@gmail.com
+ * http://eyson.cn/
+ * 公众号：尤点意思
+ */
+
+@import './style/weui/weui.wxss';
+
+page {
+    min-height: 100%;
+    /* background-color: whitesmoke; */
+    background-color: var(--weui-BG-0);
+    color: var(--weui-FG-0);
+    font-size: 16px;
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.page__hd {
+    padding: 16px;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+.page__desc {
+    margin-top: 4px;
+    color: var(--weui-FG-1);
+    text-align: left;
+    font-size: 14px;
+}
+
+.cell__desc {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.ui-btn,
+.ui-btn-primary,
+.ui-btn-warn,
+.ui-btn-default {
+    border-radius: 0;
+    width: 90% !important;
+}
+
+.ui-btn-primary {
+    color: #FFFFFF;
+    background-color: #EE869A;
+}
+
+.ui-btn-warn {
+    color: #EE869A;
+    background-color: var(--weui-BG-2);
+}
+
+.ui-btn-default {
+    color: var(--weui-FG-0);
+    background-color: var(--weui-BG-2);
+}
+
+.ui-btn-wrap {
+    margin: 16px 0;
+}
+
+
+/* 重置 */
+.weui-loadmore_line .weui-loadmore__tips {
+    background-color: transparent;
+}

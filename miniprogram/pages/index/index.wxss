@@ -1,0 +1,126 @@
+/**
+ * Betababy v1.0
+ * 2020-03-30
+ * 
+ * Eyson You
+ * youyansen@gmail.com
+ * http://eyson.cn/
+ * 公众号：尤点意思
+ */
+
+/* 重置组件样式 */
+/* .page__hd{
+     background-color: white;
+ } */
+.weui-media-box {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.weui-media-box_appmsg .weui-media-box__hd {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.weui-media-box__title {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.weui-media-box__desc {
+    font-size: 12px;
+    line-height: 1.2;
+    padding-top: 0px;
+}
+
+.weui-panel {
+    margin-top: -1px;
+}
+
+/* .weui-panel:last-child{
+     margin-bottom: 78px;
+ } */
+
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+    color: #EE869A !important;
+}
+
+/* 自定义样式 */
+.page__toobar {
+    font-size: 12px;
+    margin-top: 16px;
+    margin-bottom: 5px;
+    padding-right: 16px;
+    padding-left: 16px;
+    color: var(--weui-FG-1);
+    line-height: 1.2;
+}
+
+.ui-header {
+    padding: 20px 15px;
+    background-color: #EE869A;
+}
+
+.ui-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.ui-name {
+    height: 50px;
+    /* line-height: 50px; */
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #fff;
+}
+
+.ui-name__title {
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+.ui-name__desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ui-post {
+    margin-top: 10.5px;
+}
+
+.ui-tabbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.ui-btn-switch {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABvUlEQVR4Xu3aMU7EMBAF0P9rbkFLSUcFd4DDULF7G0QNNXQ0nAfRDbIUJLTajR177PXYkzaxnXkz3jjOEpMfnDx+OIBXwOQCPgUmLwD/EfQp4FNgcoFup4CIvAC4BPBKclcrT10CiMg7gNt/Qe9rIfQK8AXg+iDrVRB6BQgl/3Sk7NURugQIgYtIE4RuAVohdA3QAqF7gAjCjuS+5BFpAqAmghmAWgimAGogmAPQRjAJoIlgFkALIQlgWZXdA7gqeeQ0bvtB8i42ZirA4dtZrN8uzpOMxhe9YCk1iwDfJC9imUgFCC8mlqbAD4A3kuGeV48kgFgnls87gOXsady7V4CGouU+vAJSsreyP5fS/FzXJG2gJlWAiMi5oigZV3MlOD2AxaWw3hRosTtbUuolbZN+A/4GaPWxoiSgrW03AYxYCZsBtHZitmaq1vVZACMhZAOMglAEMAJCMYB1BBUAywhqAFYRVAEsrhPUAdYQUt7Oaj3vT/VbBeAEwifJm9YBxsarBrAghH96PQAIHygeST7Hbqj1+aoArYPJGc8BctRGauMVMFI2c2LxCshRG6mNV8BI2cyJxSsgR22kNr9MBrFBMNOthgAAAABJRU5ErkJggg==");
+}
+
+.ui-btn-add {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 42px;
+    height: 42px;
+    border-radius: 22px;
+    background-color: rgb(238, 134, 154);
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0px 0px 4px rgba(133, 125, 125, 0.6);
+    /* opacity: .5; */
+}

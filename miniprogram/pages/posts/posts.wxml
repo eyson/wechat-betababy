@@ -1,0 +1,76 @@
+<view class="weui-form">
+	<!-- form input [[-->
+	<form bindsubmit="bindSubmit" report-submit="{{true}}">
+	<view class="weui-form__control-area">
+		<view class="weui-cells__group weui-cells__group_form">
+			<view class="weui-cells__title">必填信息</view>
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell weui-cell_active weui-cell_select">
+					<view class="weui-cell__hd"><label class="weui-label">记录分类</label></view>
+					<view class="weui-cell__bd">
+						<picker bindchange="eventTypeSelect" range="{{eventTypePickerList}}" value="{{eventTypePickerIndex}}" range-key="title">
+							<view class="picker">{{eventTypePickerList[eventTypePickerIndex].title}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell weui-cell_active weui-cell_select">
+					<view class="weui-cell__hd"><label class="weui-label">记录内容</label></view>
+					<view class="weui-cell__bd">
+						<picker bindchange="postTypeSelect" range="{{postTypePickerList}}" value="{{postTypePickerIndex}}" range-key="title">
+							<view class="picker">{{postTypePickerList[postTypePickerIndex].title}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell">
+					<view class="weui-cell__hd"><label class="weui-label">记录数据</label></view>
+					<view class="weui-cell__bd">
+						<input name="quantity" type="digit" class="weui-input" placeholder="填写数据" />
+					</view>
+					<view class="weui-cell__ft" style="font-size: 1em;">
+						<view>{{postTypePickerList[postTypePickerIndex].unit}}</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell">
+					<view class="weui-cell__hd"><label class="weui-label">发生时间</label></view>
+					<view class="weui-cell__bd weui-flex">
+						<picker mode="multiSelector" bindchange="postTimeSelect" value="{{datetimePickerIndex}}" range="{{datetimePickerList}}">
+							<view class="picker">{{datetimePickerList[0][datetimePickerIndex[0]]}} {{datetimePickerList[1][datetimePickerIndex[1]]}}:{{datetimePickerList[2][datetimePickerIndex[2]]}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- form input ]]-->
+
+	<!-- 备注 -->
+	<view class="weui-form__control-area">
+		<view class="weui-cells__group weui-cells__group_form">
+			<view class="weui-cells__title">写点备注</view>
+			<view class="weui-cells weui-cells_form">
+				<view class="weui-cell">
+					<view class="weui-cell__bd">
+						<textarea name="memo" class="weui-textarea" placeholder="填写备注" rows="3"></textarea>
+						<view class="weui-textarea-counter"><text>0</text>/100</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- button [[-->
+	<view class="ui-btn-wrap">
+		<button class="weui-btn ui-btn-primary" form-type="submit">确认添加</button>
+	</view>
+	<!-- button ]]-->
+	</form>
+</view>

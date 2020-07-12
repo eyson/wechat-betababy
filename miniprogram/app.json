@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/babies/babies",
+    "pages/baby/baby",
+    "pages/baby/detail/detail",
+    "pages/relationship/relationship",
+    "pages/posts/posts",
+    "pages/posts/detail/detail",
+    "pages/login/login",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "selectedColor": "#EE869A",
+    "list": [{
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/icon-tab-home.png",
+        "selectedIconPath": "/images/icon-tab-home-on.png"
+      },
+      {
+        "text": "宝宝",
+        "pagePath": "pages/babies/babies",
+        "iconPath": "/images/icon-tab-baby.png",
+        "selectedIconPath": "/images/icon-tab-baby-on.png"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/about/about",
+        "iconPath": "/images/icon-tab-about.png",
+        "selectedIconPath": "/images/icon-tab-about-on.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#EE869A",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#EE869A",
+    "navigationBarTitleText": "贝塔宝宝",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

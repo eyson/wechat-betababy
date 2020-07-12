@@ -1,0 +1,88 @@
+<view class="page" wx:if="{{isShow}}">
+	<!-- header [[-->
+	<view class="ui-header">
+		<view class="weui-flex">
+			<view class="ui-avatar" wx:if="{{pickerBabyList.length > 0}}">
+				<image src="{{pickerBabyList[pickerBabyIndex].fileId}}" style="width: 50px; height: 50px;"></image>
+			</view>
+			<view class="ui-avatar" wx:else>
+				<image src="../../images/betababy-white.png" style="width: 50px; height: 50px;"></image>
+			</view>
+			<view class="weui-flex__item">
+				<view class="ui-name" wx:if="{{pickerBabyList.length > 0}}">
+					<view class="ui-name__title">{{pickerBabyList[pickerBabyIndex].name}}</view>
+					<view class="ui-name__desc">{{pickerBabyList[pickerBabyIndex].birthday}} | {{pickerBabyList[pickerBabyIndex].height}}cm | {{pickerBabyList[pickerBabyIndex].weight}}kg</view>
+				</view>
+				<view class="ui-name" wx:else>
+					<view class="ui-name__title">宝贝</view>
+					<view class="ui-name__desc">请添加宝宝</view>
+				</view>
+			</view>
+			<view class="ui-post" wx:if="{{pickerBabyList.length > 1}}">
+				<picker bindchange="selectBaby" value="{{pickerBabyIndex}}" range="{{pickerBabyList}}" range-key="name">
+					<i class="ui-btn-switch"></i>
+				</picker>
+			</view>
+		</view>
+	</view>
+	<!-- header ]]-->
+
+	<!-- page [[-->
+
+	<!-- 无数据 [[-->
+	<view class="page" wx:if="{{postList.length <= 0}}">
+		<view class="weui-loadmore weui-loadmore_line">
+			<text class="weui-loadmore__tips">暂无数据</text>
+		</view>
+	</view>
+	<!-- 无数据 ]]-->
+
+	<!-- 有数据 [[-->
+	<view class="page" wx:else>
+		<!-- <view class="page__hd">
+		<view class="page__title">Padge</view>
+		<view class="page__desc">这是个副标题</view>
+	</view> -->
+
+		<scroll-view style="height: {{scrollViewHeight}}px;" scroll-y="true" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" bindscroll="scrolling">
+			<!-- list [[-->
+			<view wx:for="{{postList}}" wx:key="_id">
+				<view class="page__toobar" wx:if="{{index === 0 || postList[index-1].postDate != item.postDate}}">
+					<view class="weui-flex">
+						<view class="weui-flex__item">
+							<view class="">{{item.postDate}}</view>
+						</view>
+						<!-- <view class="weui-flex__item" style="text-align: right;">
+							<view class="">100ml / 8h / 3次</view>
+						</view> -->
+					</view>
+				</view>
+				<view class="weui-panel">
+					<view class="weui-panel__bd">
+						<navigator url="/pages/posts/detail/detail?postId={{item._id}}" class="weui-media-box weui-media-box_appmsg">
+							<view class="weui-media-box__hd">
+								<image class="weui-media-box__thumb" src="../../images/{{item.icon}}" alt></image>
+							</view>
+							<view class="weui-media-box__bd">
+								<h4 class="weui-media-box__title">{{item.postTypeDesc}}</h4>
+								<view class="weui-media-box__desc">{{item.userInfo.nickName}} {{item.postTime}}</view>
+							</view>
+							<view slot="footer">
+								<view>{{item.quantity}} {{item.unit}}</view>
+							</view>
+						</navigator>
+					</view>
+				</view>
+			</view>
+			<!-- list ]]-->
+		</scroll-view>
+
+	</view>
+	<!-- page ]]-->
+
+	<!-- add button [[-->
+	<view class="ui-btn-add" wx:if="{{pickerBabyList.length > 0}}">
+		<navigator url="/pages/posts/posts?babyId={{babyInfo._id}}">+</navigator>
+	</view>
+	<!-- add button ]]-->
+</view>

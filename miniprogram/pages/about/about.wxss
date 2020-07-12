@@ -1,0 +1,27 @@
+/**
+ * Betababy v1.0
+ * 2020-03-30
+ * 
+ * Eyson You
+ * youyansen@gmail.com
+ * http://eyson.cn/
+ * 公众号：尤点意思
+ */
+
+.ui-about {
+    padding: 38px 16px;
+}
+
+.ui-about-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.ui-about-title {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.2em;
+}

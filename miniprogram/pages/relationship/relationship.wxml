@@ -1,0 +1,28 @@
+<view class="page" wx:if="{{isShow}}">
+	<view class="ui-about">
+		<view class="ui-about-logo">
+			<image src="{{babyInfo.detail.fileId}}" style="width: 64px;height: 64px;"></image>
+		</view>
+		<view class="ui-about-title">{{babyInfo.detail.name}}</view>
+	</view>
+	<view class="page__bd">
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">性别</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.sex > 0 ? '女' : '男'}}</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">生日</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.birthday}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- button [[-->
+    <view class="ui-btn-wrap" wx:if="{{babyInfo.rel._id && babyInfo.rel.type == 0}}">
+		<button class="weui-btn ui-btn-primary" bindtap="removeRelation">解除关联</button>
+    </view>
+	<view class="ui-btn-wrap" wx:if="{{!babyInfo.rel._id}}">
+		<button class="weui-btn ui-btn-primary" bindtap="confirmRelation">确认关联</button>
+    </view>
+	<!-- button ]]-->
+</view>

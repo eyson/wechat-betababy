@@ -1,0 +1,44 @@
+<view class="page" wx:if="{{isShow}}">
+	<view class="ui-about">
+		<view class="ui-about-logo">
+			<image src="{{babyInfo.detail.fileId}}" style="width: 64px;height: 64px;"></image>
+		</view>
+		<view class="ui-about-title">{{babyInfo.detail.name}}</view>
+	</view>
+	<view class="page__bd">
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">性别</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.sex > 0 ? '女' : '男'}}</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">生日</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.birthday}}</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">身高</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.height}} cm</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">体重</view>
+				<view class="weui-cell__ft">{{babyInfo.detail.weight}} kg</view>
+			</view>
+		</view>
+	</view>
+	<!-- button [[-->
+	<view class="ui-btn-wrap" wx:if="{{babyInfo.rel.type==1}}">
+		<navigator url="/pages/baby/baby?babyId={{babyInfo.detail._id}}">
+			<button class="weui-btn ui-btn-primary">修改信息</button>
+		</navigator>
+    </view>
+    <view class="ui-btn-wrap" wx:if="{{babyInfo.rel.type==1}}">
+		<button class="weui-btn ui-btn-default" open-type="share">分享关联</button>
+	</view>
+	<view class="ui-btn-wrap" wx:if="{{babyInfo.rel.type==1}}">
+		<button class="weui-btn ui-btn-warn" bindtap="removeBaby">删除宝宝</button>
+	</view>
+	<view class="ui-btn-wrap" wx:if="{{babyInfo.rel.type==0}}">
+		<button class="weui-btn ui-btn-primary" bindtap="removeRelation">解除关联</button>
+    </view>
+	<!-- button ]]-->
+</view>
